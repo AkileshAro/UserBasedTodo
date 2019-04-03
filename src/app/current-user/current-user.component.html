@@ -1,0 +1,20 @@
+<div class="taskList">
+  <form>
+    <div class="row">
+      <div class="col-10">
+        <input class='form-control' #taskName type="text" [(ngModel)]='task' name='task' placeholder="Enter your task">
+      </div>
+      <div class="col-2">
+        <button class="btn btn-success" (click)='addTask(taskName)'> Add Task </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action bg-dark" style='color:white;'>
+      {{user.name}}'s Task List
+    </button>
+    <button type="button" class="list-group-item list-group-item-action task-item" *ngFor='let task of taskList'
+      (click)='deleteTask(task)'>{{task}}</button>
+  </div>
+</div>

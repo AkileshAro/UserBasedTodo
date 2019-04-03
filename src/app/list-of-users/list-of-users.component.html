@@ -1,0 +1,9 @@
+<div class="users">
+  <div class="card text-white mb-3" *ngFor='let user of listOfUsers'>
+    <div class="card-header" style='background:#18334e'>User Number {{user.id}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{user.name}}</h5>
+      <p class="card-text">{{user.email}}</p>
+    </div>
+  </div>
+</div>

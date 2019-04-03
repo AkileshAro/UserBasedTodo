@@ -1,0 +1,45 @@
+<div class="registerForm">
+  <h3 class='form-header'>Register User</h3>
+  <form #form='ngForm'>
+    <div class="form-group">
+
+      <div class="row">
+        <div class='col-6'>
+          <input type="number" [class.error]='id.invalid && id.touched' #id='ngModel' required [(ngModel)]='user.id' name='id' class='form-control' placeholder='Enter User ID'>
+          <span *ngIf='id.invalid && id.touched' class='error-message'>Invalid Field Entry</span>
+        </div>
+        <div class='col-6'>
+          <input type="text" [class.error]='name.invalid && name.touched' #name='ngModel' required [(ngModel)]='user.name' name='name' class='form-control' placeholder='Enter User Name'>
+          <span *ngIf='name.invalid && name.touched' class='error-message'>Invalid Field Entry</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-6">
+          <input type="text" [class.error]='email.invalid && email.touched' #email='ngModel' required [(ngModel)]='user.email' name='email' class='form-control' placeholder='Enter User Email'>
+          <span *ngIf='email.invalid && email.touched' class='error-message'>Invalid Field Entry</span>
+        </div>
+        <div class="col-6">
+          <input type="number" [class.error]='age.invalid && age.touched' #age='ngModel' required [(ngModel)]='user.age' name='age' class='form-control' placeholder='Enter User Age'>
+          <span *ngIf='age.invalid && age.touched' class='error-message'>Invalid Field Entry</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-12">
+          <input type="password" [class.error]='password.invalid && password.touched' #password='ngModel' required  [(ngModel)]='user.password' name='password' class='form-control'
+            placeholder='Enter Password'>
+            <span *ngIf='password.invalid && password.touched' class='error-message'>Invalid Field Entry</span>
+        </div>
+      </div>
+    </div>
+
+    <div class='text-center'>
+      <button class='btn btn-primary' [class.disabled]='form.invalid' (click)='registerUser(form.invalid)' style='background:#3872b1;'>Register User</button>
+    </div>
+  </form>
+</div>
